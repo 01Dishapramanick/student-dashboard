@@ -6,40 +6,43 @@ import ActivityTile from './ActivityTile'
 import CourseCard from './CourseCard'
 import { Course } from '@/types'
 
-const container = {
-  hidden: {},
-  show: {
-    transition: {
-      staggerChildren: 0.1,
-    },
-  },
-}
-
-const item = {
-  hidden: { opacity: 0, y: 20 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: { type: 'spring', stiffness: 300, damping: 20 },
-  },
-}
-
 export default function BentoGrid({ courses }: { courses: Course[] }) {
   return (
     <motion.div
-      variants={container}
       initial="hidden"
       animate="show"
+      variants={{
+        hidden: {},
+        show: { transition: { staggerChildren: 0.1 } },
+      }}
       className="grid grid-cols-1 lg:grid-cols-3 gap-4"
     >
-      <motion.div variants={item} className="lg:col-span-2">
+      <motion.div
+        variants={{
+          hidden: { opacity: 0, y: 20 },
+          show: { opacity: 1, y: 0, transition: { type: 'spring' as const, stiffness: 300, damping: 20 } },
+        }}
+        className="lg:col-span-2"
+      >
         <HeroTile />
       </motion.div>
-      <motion.div variants={item} className="lg:col-span-1">
+      <motion.div
+        variants={{
+          hidden: { opacity: 0, y: 20 },
+          show: { opacity: 1, y: 0, transition: { type: 'spring' as const, stiffness: 300, damping: 20 } },
+        }}
+        className="lg:col-span-1"
+      >
         <ActivityTile />
       </motion.div>
       {courses.map((course) => (
-        <motion.div variants={item} key={course.id}>
+        <motion.div
+          key={course.id}
+          variants={{
+            hidden: { opacity: 0, y: 20 },
+            show: { opacity: 1, y: 0, transition: { type: 'spring' as const, stiffness: 300, damping: 20 } },
+          }}
+        >
           <CourseCard course={course} />
         </motion.div>
       ))}
