@@ -30,12 +30,12 @@ export default function BentoGrid({ courses }: { courses: Course[] }) {
       variants={container}
       initial="hidden"
       animate="show"
-      className="flex flex-col gap-4 md:grid md:grid-cols-2 lg:grid-cols-3"
+      className="grid grid-cols-1 lg:grid-cols-3 gap-4"
     >
-      <motion.div variants={item} className="md:col-span-2">
+      <motion.div variants={item} className="lg:col-span-2">
         <HeroTile />
       </motion.div>
-      <motion.div variants={item} className="md:col-span-1">
+      <motion.div variants={item} className="lg:col-span-1">
         <ActivityTile />
       </motion.div>
       {courses.map((course) => (
