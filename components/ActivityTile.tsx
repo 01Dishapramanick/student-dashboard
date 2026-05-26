@@ -29,11 +29,8 @@ export default function ActivityTile() {
       <h2 className="text-white font-semibold text-lg mb-4">Learning Activity</h2>
       <div className="grid grid-cols-7 gap-1">
         {activityData.map((level, i) => (
-          <motion.div
+          <div
             key={i}
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: i * 0.02 }}
             className={`w-6 h-6 rounded-sm ${colorMap[level]}`}
           />
         ))}
