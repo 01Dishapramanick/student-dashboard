@@ -10,9 +10,9 @@ export default function HeroTile() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ type: 'spring', stiffness: 300, damping: 20 }}
       whileHover={{ scale: 1.02 }}
-      className="col-span-2 rounded-2xl p-8 bg-gradient-to-br from-violet-900/50 to-indigo-900/50 border border-white/10 backdrop-blur-sm"
+      className="w-full rounded-2xl p-8 bg-gradient-to-br from-violet-900/50 to-indigo-900/50 border border-white/10 backdrop-blur-sm"
     >
-      <h1 className="text-4xl font-bold text-white mb-2">
+      <h1 className="text-3xl lg:text-4xl font-bold text-white mb-2">
         Welcome back, Alex 👋
       </h1>
       <p className="text-zinc-400 text-lg mb-6">
