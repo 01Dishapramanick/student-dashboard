@@ -12,12 +12,14 @@ const navItems = [
 ]
 
 export default function Sidebar() {
-  const [collapsed, setCollapsed] = useState(false)
+  const [collapsed, setCollapsed] = useState(
+  typeof window !== 'undefined' && window.innerWidth < 1024 ? true : false
+)
   const [active, setActive] = useState('Dashboard')
 
   return (
     <>
-      {/* Desktop Sidebar */}
+      {/* Desktop & Tablet Sidebar */}
       <motion.nav
         animate={{ width: collapsed ? 72 : 220 }}
         transition={{ type: 'spring', stiffness: 300, damping: 30 }}
