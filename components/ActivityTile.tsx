@@ -24,14 +24,14 @@ export default function ActivityTile() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ type: 'spring', stiffness: 300, damping: 20 }}
       whileHover={{ scale: 1.02 }}
-      className="rounded-2xl p-6 bg-zinc-900 border border-white/10"
+      className="w-full rounded-2xl p-6 bg-zinc-900 border border-white/10"
     >
       <h2 className="text-white font-semibold text-lg mb-4">Learning Activity</h2>
-      <div className="grid grid-cols-7 gap-1">
+      <div className="grid grid-cols-7 gap-2">
         {activityData.map((level, i) => (
           <div
             key={i}
-            className={`w-6 h-6 rounded-sm ${colorMap[level]}`}
+            className={`aspect-square rounded-sm ${colorMap[level]}`}
           />
         ))}
       </div>
